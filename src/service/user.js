@@ -5,12 +5,12 @@ let { API } = process.env;
 
 export default {
   login(header) {
-    return fetch(`${API}/auth/loginByWechat`, {}, 'post', header);
+    return fetch(`${API}/auth`, {}, 'post', header);
   },
   checkAuthorization(accessToken) {
-    return fetch(`${API}/user-server/authorization`, { accessToken });
+    return fetch(`${API}/user-server`, { accessToken });
   },
   refreshAuthorization(refreshToken) {
-    return fetch(`${API}/user-server/authorization/refresh.do`, { refreshToken });
+    return fetch(`${API}/user-server`, { refreshToken });
   },
 };
